@@ -7,13 +7,17 @@
 * danil - Dan's work
 * emerson - Emerson's work
 
-### Trump claim 
+## SF Crime Data
 
-Raw Claim:
-```Our jobless rate is now down to 3.7 percent. And, by the way, in Missouri, I was just told by Josh, it's at 3.2 percent, which is the lowest in the history of the state.
-```
-Truth: 
-```
-Missouri's unemployment rate was lower in 2000, according to BLS data.
-``` 
-Dataset: BLS - BigQuery
+### Insights
+> What questions to be answered?
+
+1. What districts have the highest number of violent crimes in SF?
+   * define violent
+   * heat map of violent crimes using Folium library
+2. What district has the most number of violent crimes?
+3. What days of the week has the most amount violent crimes in each district? Overall?
+
+%%gcs read --object gs://ucsb_hacks_datasets/sf-crime-data-filtered.csv	--variable crime_data
+df = pd.read_csv(StringIO(crime_data))
+
